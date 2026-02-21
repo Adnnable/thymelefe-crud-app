@@ -1,0 +1,17 @@
+<!-- Inside src/main/resources/templates/fragments/layout.html -->
+<nav th:fragment="navbar" class="navbar navbar-dark bg-dark">
+    <span class="navbar-brand mb-0 h1">My Library</span>
+</nav>
+
+<div th:fragment="sidebar" class="col-md-3 bg-light vh-100 p-3">
+    <h5>Genres</h5>
+    <ul class="nav flex-column">
+        <li class="nav-item">
+            <a class="nav-link" th:href="@{/}">All Books</a>
+        </li>
+        <!-- Loop through unique genres from the DB -->
+        <li class="nav-item" th:each="g : ${genres}">
+            <a class="nav-link" th:href="@{/(genre=${g})}" th:text="${g}">Genre Name</a>
+        </li>
+    </ul>
+</div>

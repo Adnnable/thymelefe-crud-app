@@ -1,0 +1,26 @@
+<!-- src/main/resources/templates/fragments/sidebar.html -->
+<div th:fragment="genre-sidebar" >
+    <div class="position-sticky ">
+        <h5 class="sidebar-header border-bottom mt-2">
+            <span class="text-light p-4">Explore Genres</span>
+        </h5>
+        <ul class="nav  flex-column ">
+            <li class="nav-item">
+                <a class="nav-link  text-white" th:href="@{/}">
+                    <i class="bi bi-book me-2"></i> All Collections
+                </a>
+            </li>
+            
+            <li class="nav-item nav-title" th:each="g : ${genres}">
+                <a class="nav-link text-white-50 py-2 ps-4 " 
+                   th:href="@{/(genre=${g})}" 
+                   th:text="${g}">
+                   Genre Name
+                </a>
+            </li>
+        </ul>
+    </div>
+</div> 
+	
+
+
