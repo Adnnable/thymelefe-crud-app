@@ -50,19 +50,7 @@ public class LibraryController {
     }
 
     // EDIT BOOK
-    @GetMapping("/edit/{id}")
-    public String showEditForm(@PathVariable("id") Long id, Model model, Authentication authentication) {
-        if (authentication == null || !authentication.isAuthenticated()) {
-            return "redirect:/signin";
-        }
-
-        Book book = bookRepo.findById(id)
-            .orElseThrow(() -> new IllegalArgumentException("Invalid book Id:" + id));
-
-        model.addAttribute("book", book);
-        model.addAttribute("genres", bookRepo.findUniqueGenres());
-        return "edit-book";
-    }
+  
 
     // DELETE BOOK
     @GetMapping("/delete/{id}")
