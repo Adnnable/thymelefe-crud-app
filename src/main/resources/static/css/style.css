@@ -62,3 +62,48 @@ body {
     padding: 0.25rem 0.5rem;
     font-size: 0.875rem;
 }
+
+/* Mobile Genre Scroller */
+@media (max-width: 767.98px) {
+    .sidebar-wrapper {
+        position: sticky;
+        top: 0;
+        z-index: 1020;
+    }
+    
+    .genre-scroller {
+        overflow-x: auto; /* Enables horizontal scroll */
+        -webkit-overflow-scrolling: touch;
+        background-color: #212529;
+        padding: 5px 10px;
+    }
+
+    /* Hide scrollbar for a cleaner look but keep functionality */
+    .genre-scroller::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .genre-scroller .nav {
+        flex-wrap: nowrap; /* Forces items into a single line */
+    }
+
+    .genre-scroller .nav-link {
+        padding: 8px 15px !important;
+        font-size: 0.9rem;
+    }
+}
+
+/* Desktop Sidebar Height */
+@media (min-width: 768px) {
+    .sidebar-wrapper {
+        min-height: 100vh;
+        position: sticky;
+        top: 0;
+    }
+}
+
+/* General Improvements */
+.table-responsive {
+    border-radius: 12px;
+}
+
